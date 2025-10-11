@@ -1,0 +1,32 @@
+Last login: Tue Oct  7 20:00:22 on ttys060
+➜  ~ curl -u 'marvin:Mr6803Jn2934*' \           
+  -H 'Content-Type: application/json' \
+  -X PUT 'https://search-opensearchdinning-id7jzgvfbjqqpobndub2h3h4am.aos.us-east-1.on.aws/_plugins/_security/api/rolesmapping/all_access' \
+  -d '{
+    "backend_roles": [
+      "arn:aws:iam::244086559221:user/Marvin"
+    ],
+    "users": [
+      "arn:aws:iam::244086559221:user/Marvin"
+    ]
+  }'
+
+{"status":"OK","message":"'all_access' updated."}%                              ➜  ~ 
+➜  ~ curl -u 'marvin:Mr6803Jn2934*' \       
+  'https://search-opensearchdinning-id7jzgvfbjqqpobndub2h3h4am.aos.us-east-1.on.aws/_plugins/_security/api/account?pretty'
+{
+  "user_name" : "marvin",
+  "is_reserved" : false,
+  "is_hidden" : false,
+  "is_internal_user" : true,
+  "user_requested_tenant" : null,
+  "backend_roles" : [ ],
+  "custom_attribute_names" : [ ],
+  "tenants" : {
+    "marvin" : true
+  },
+  "roles" : [
+    "security_manager"
+  ]
+}
+➜  ~ 

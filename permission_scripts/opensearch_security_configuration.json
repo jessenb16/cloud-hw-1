@@ -1,0 +1,27 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowSignedCallsFromMyAccount",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::244086559221:root"
+      },
+      "Action": "es:ESHttp*",
+      "Resource": [
+        "arn:aws:es:us-east-1:244086559221:domain/opensearchdinning",
+        "arn:aws:es:us-east-1:244086559221:domain/opensearchdinning/*"
+      ]
+    },
+    {
+      "Sid": "TEMP-AllowAllToReachDashboards",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "es:ESHttp*",
+      "Resource": [
+        "arn:aws:es:us-east-1:244086559221:domain/opensearchdinning",
+        "arn:aws:es:us-east-1:244086559221:domain/opensearchdinning/*"
+      ]
+    }
+  ]
+}
